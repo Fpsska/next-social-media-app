@@ -28,10 +28,8 @@ export const GlobalStyles = css`
 
   body {
     font-size: 14px;
-    font-weight: 400;
     color: #fff;
     background: #000;
-    font-family: 'Roboto', sans-serif;
     margin: 0;
   }
 `;

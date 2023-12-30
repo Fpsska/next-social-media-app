@@ -1,8 +1,19 @@
 import type { Metadata } from 'next';
+import { Roboto } from 'next/font/google';
+
+import { EffectorNext } from '@effector/next';
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 
+import { ReduxDevToolsAdapter } from '@/shared';
+
 // /. IMPORTS
+
+const fontSettings = Roboto({
+  weight: '400',
+  fallback: ['sans-serif'],
+  subsets: ['cyrillic']
+});
 
 export const metadata: Metadata = {
   title: 'Social Media Next App',
@@ -12,8 +23,11 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body>
-        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+      <body className={fontSettings.className}>
+        <ReduxDevToolsAdapter />
+        <EffectorNext>
+          <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+        </EffectorNext>
       </body>
     </html>
   );
