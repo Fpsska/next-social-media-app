@@ -3,6 +3,8 @@
 import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 
+import { FriendTemplate } from '@/shared/components';
+
 import { GlobalStyles } from './global.styles';
 
 // /. IMPORTS
@@ -24,6 +26,7 @@ const Home = () => {
     <Main>
       <Global styles={GlobalStyles} />
       <Title>HELLO WORLD</Title>
+      <FriendTemplate name="thomas lean" city="New York, United states" />
     </Main>
   );
 };

@@ -1,0 +1,1 @@
+export { FriendTemplate } from './FriendTemplate';

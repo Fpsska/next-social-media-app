@@ -28,8 +28,8 @@ export const GlobalStyles = css`
 
   body {
     font-size: 14px;
-    color: #fff;
-    background: #000;
+    color: #fbfbfb;
+    background: #130f1f;
     margin: 0;
   }
 `;
