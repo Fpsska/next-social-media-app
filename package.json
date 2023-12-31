@@ -1,6 +1,7 @@
 {
   "name": "social-media-app",
   "version": "0.1.0",
+  "author": "Fpsska",
   "private": true,
   "scripts": {
     "dev": "next dev",
