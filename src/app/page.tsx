@@ -26,7 +26,11 @@ const Home = () => {
     <Main>
       <Global styles={GlobalStyles} />
       <Title>HELLO WORLD</Title>
-      <FriendTemplate name="thomas lean" city="New York, United states" />
+      <FriendTemplate
+        name="thomas lean"
+        city="New York, United states"
+        // action="adding"
+      />
     </Main>
   );
 };

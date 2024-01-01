@@ -2,7 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  transpilePackages: ['@emotion', 'effector/babel-plugin'],
+  transpilePackages: [
+    '@emotion',
+    '@emotion/babel-plugin',
+    'effector/babel-plugin'
+  ],
   modularizeImports: {
     '@mui/icons-material': {
       transform: '@mui/icons-material/{{member}}'
