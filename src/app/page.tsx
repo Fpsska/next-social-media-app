@@ -4,6 +4,7 @@ import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { FriendTemplate } from '@/shared/components';
+import { StoryTemplate } from '@/shared/components/storyTemplate';
 
 import { GlobalStyles } from './global.styles';
 
@@ -31,6 +32,11 @@ const Home = () => {
         city="New York, United states"
         // action="adding"
       />
+      <div style={{ display: 'flex', marginTop: '20px' }}>
+        <StoryTemplate name="Elena" action="adding" />
+        <StoryTemplate name="Neil" />
+        <StoryTemplate name="Keran" />
+      </div>
     </Main>
   );
 };

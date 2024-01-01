@@ -29,19 +29,20 @@ const InfoContainer = styled.div`
 `;
 
 const Name = styled.span`
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   color: #fbfbfb;
   margin-bottom: 5px;
 `;
 
 const City = styled.span`
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 100;
   color: #4b4a4f;
 `;
 
 const baseButtonStyles = css`
+  font-size: 14px;
   background-color: transparent;
   padding: 0;
   border: none;
@@ -58,7 +59,6 @@ const ButtonContainer = styled.div`
 
 const ButtonAccept = styled.button`
   ${baseButtonStyles}
-  font-size: 12px;
   color: #3956c6;
   margin-right: 15px;
 
@@ -69,7 +69,6 @@ const ButtonAccept = styled.button`
 
 const ButtonDecline = styled.button`
   ${baseButtonStyles}
-  font-size: 12px;
   color: #fbfbfb;
 
   &:hover {
@@ -78,6 +77,8 @@ const ButtonDecline = styled.button`
 `;
 
 const imageStyles = {
+  width: '70px',
+  height: '70px',
   borderRadius: '50%',
   maxWidth: '100%',
   marginRight: '10px',
@@ -94,13 +95,7 @@ export const FriendTemplate = ({
   return (
     <Template action={action}>
       <Wrapper action={action}>
-        <Image
-          src={avatar}
-          width={50}
-          height={50}
-          style={imageStyles}
-          alt="user avatar"
-        />
+        <Image src={avatar} style={imageStyles} alt="user avatar" />
         <InfoContainer>
           <Name>{name}</Name>
           <City>{city}</City>
