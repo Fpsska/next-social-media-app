@@ -3,7 +3,7 @@
 import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { FriendTemplate } from '@/shared/components';
+import { FriendTemplate, Heading, Link } from '@/shared/components';
 import { StoryTemplate } from '@/shared/components/storyTemplate';
 
 import { GlobalStyles } from './global.styles';
@@ -27,12 +27,29 @@ const Home = () => {
     <Main>
       <Global styles={GlobalStyles} />
       <Title>HELLO WORLD</Title>
-      <FriendTemplate
-        name="thomas lean"
-        city="New York, United states"
-        // action="adding"
-      />
-      <div style={{ display: 'flex', marginTop: '20px' }}>
+
+      <Heading text="Contacts" indentBottom="20px" />
+      <Link text="Watch All" />
+
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <FriendTemplate name="thomas lean" city="New York, United states" />
+
+        <FriendTemplate
+          name="thomas lean"
+          city="New York, United states"
+          action="adding"
+        />
+
+        <FriendTemplate
+          name="thomas lean"
+          city="New York, United states"
+          action="messaging"
+        />
+      </div>
+
+      <Heading text="Stories" indentBottom="20px" />
+
+      <div style={{ display: 'flex' }}>
         <StoryTemplate name="Elena" action="adding" />
         <StoryTemplate name="Neil" />
         <StoryTemplate name="Keran" />

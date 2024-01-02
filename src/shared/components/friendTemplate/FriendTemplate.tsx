@@ -14,6 +14,10 @@ const Template = styled.div<StyledComponentProps>`
   display: ${(props) => props.action !== 'requesting' && 'flex'};
   align-items: center;
   justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
 `;
 
 const Wrapper = styled.div<StyledComponentProps>`
