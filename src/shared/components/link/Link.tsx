@@ -11,7 +11,7 @@ const StyledLink = styled.a`
 `;
 
 export const Link = ({ text }: Props) => {
-  return <StyledLink>{text}</StyledLink>;
+  return <StyledLink href="#">{text}</StyledLink>;
 };
 
 type Props = {

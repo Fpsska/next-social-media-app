@@ -6,7 +6,7 @@ const Title = styled.h2<StyledComponentProps>`
   font-size: 16px;
   font-weight: 500;
   color: #fbfbfb;
-  margin-bottom: ${(props) => props.indentBottom};
+  margin-bottom: ${({ indentBottom }) => indentBottom};
   margin-top: 0;
 `;
 

@@ -33,10 +33,13 @@ const Template = styled.div`
 const Name = styled.span<StyledComponentProps>`
   font-size: 14px;
   font-weight: 400;
-  color: ${(props) => (props.action === 'adding' ? '#4b4a4f' : '#fbfbfb')};
+  color: ${({ action }) => (action === 'adding' ? '#4b4a4f' : '#fbfbfb')};
 `;
 
 const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
   padding: 0;
   border: none;
@@ -48,16 +51,16 @@ const ImageContainer = styled.div<StyledComponentProps>`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: ${(props) =>
-    props.action === 'adding' ? '1.5px dashed #fbfbfb' : 'none'};
+  border: ${({ action }) =>
+    action === 'adding' ? '1.5px dashed #fbfbfb' : 'none'};
   margin-bottom: 10px;
   width: 70px;
   height: 70px;
   overflow: hidden;
   position: relative;
 
-  ${(props) =>
-    props.action === 'viewing' &&
+  ${({ action }) =>
+    action === 'viewing' &&
     `&::after {
     content: '';
     position: absolute;

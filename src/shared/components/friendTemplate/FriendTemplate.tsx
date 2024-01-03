@@ -11,7 +11,7 @@ import placeholder from '../../../../public/assets/images/user-placeholder-avata
 // /. IMPORTS
 
 const Template = styled.div<StyledComponentProps>`
-  display: ${(props) => props.action !== 'requesting' && 'flex'};
+  display: ${({ action }) => action !== 'requesting' && 'flex'};
   align-items: center;
   justify-content: space-between;
 
@@ -22,9 +22,9 @@ const Template = styled.div<StyledComponentProps>`
 
 const Wrapper = styled.div<StyledComponentProps>`
   display: flex;
-  align-items: ${(props) =>
-    props.action === 'requesting' ? 'flex-start' : 'center'};
-  margin-right: ${(props) => props.action !== 'requesting' && '40px;'};
+  align-items: ${({ action }) =>
+    action === 'requesting' ? 'flex-start' : 'center'};
+  margin-right: ${({ action }) => action !== 'requesting' && '40px;'};
 `;
 
 const InfoContainer = styled.div`
@@ -54,6 +54,9 @@ const baseButtonStyles = css`
 `;
 
 const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   ${baseButtonStyles}
 `;
 
