@@ -4,7 +4,12 @@ import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { Navigation, SearchBar } from '@/components';
-import { FriendTemplate, Heading, Link, Separator } from '@/shared/components';
+import {
+  ActionLink,
+  Divider,
+  FriendTemplate,
+  Heading
+} from '@/shared/components';
 import { StoryTemplate } from '@/shared/components/storyTemplate';
 
 import { GlobalStyles } from './global.styles';
@@ -22,8 +27,8 @@ const Home = () => {
     <Main>
       <Global styles={GlobalStyles} />
 
-      <Heading text="Contacts" indentBottom="20px" />
-      <Link text="Watch All" />
+      <Heading indentBottom="20px">Contacts</Heading>
+      <ActionLink>Watch All</ActionLink>
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <FriendTemplate name="thomas lean" city="New York, United states" />
@@ -41,7 +46,7 @@ const Home = () => {
         />
       </div>
 
-      <Heading text="Stories" indentBottom="20px" />
+      <Heading indentBottom="20px">Stories</Heading>
 
       <div style={{ display: 'flex' }}>
         <StoryTemplate name="Elena" action="adding" />
@@ -49,7 +54,7 @@ const Home = () => {
         <StoryTemplate name="Keran" />
       </div>
 
-      <Separator />
+      <Divider />
 
       <SearchBar />
 

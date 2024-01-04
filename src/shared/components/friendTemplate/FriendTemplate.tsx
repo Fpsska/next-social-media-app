@@ -2,6 +2,7 @@ import Image, { StaticImageData } from 'next/image';
 
 import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
 import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
+import { Button, IconButton, Stack, Tooltip, Typography } from '@mui/material';
 
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -46,41 +47,20 @@ const City = styled.span`
 `;
 
 const baseButtonStyles = css`
-  font-size: 14px;
-  background-color: transparent;
-  padding: 0;
-  border: none;
-  cursor: pointer;
+  font-size: 12px;
 `;
 
-const Button = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  ${baseButtonStyles}
-`;
-
-const ButtonContainer = styled.div`
+const ButtonContainer = styled(Stack)`
   margin-top: 10px;
 `;
 
-const ButtonAccept = styled.button`
+const ButtonAccept = styled(Button)`
   ${baseButtonStyles}
-  color: #3956c6;
-  margin-right: 15px;
-
-  &:hover {
-    color: green;
-  }
+  color: #4e7bff;
 `;
 
-const ButtonDecline = styled.button`
+const ButtonDecline = styled(Button)`
   ${baseButtonStyles}
-  color: #fbfbfb;
-
-  &:hover {
-    color: red;
-  }
 `;
 
 const imageStyles = {
@@ -109,9 +89,11 @@ export const FriendTemplate = ({
 
           <>
             {action === 'requesting' && (
-              <ButtonContainer>
-                <ButtonAccept>Accept</ButtonAccept>
-                <ButtonDecline>Decline</ButtonDecline>
+              <ButtonContainer direction="row" spacing={2}>
+                <ButtonAccept variant="text">Accept</ButtonAccept>
+                <ButtonDecline variant="text" color="error">
+                  Decline
+                </ButtonDecline>
               </ButtonContainer>
             )}
           </>
@@ -120,17 +102,21 @@ export const FriendTemplate = ({
 
       <>
         {action === 'messaging' && (
-          <Button>
-            <MessageOutlinedIcon style={{ color: '#4e7bff' }} />
-          </Button>
+          <Tooltip title="send message">
+            <IconButton aria-label="send message">
+              <MessageOutlinedIcon style={{ color: '#4e7bff' }} />
+            </IconButton>
+          </Tooltip>
         )}
       </>
 
       <>
         {action === 'adding' && (
-          <Button>
-            <PersonAddOutlinedIcon style={{ color: '#4e7bff' }} />
-          </Button>
+          <Tooltip title="add to friends">
+            <IconButton aria-label="add to friends">
+              <PersonAddOutlinedIcon style={{ color: '#4e7bff' }} />
+            </IconButton>
+          </Tooltip>
         )}
       </>
     </Template>

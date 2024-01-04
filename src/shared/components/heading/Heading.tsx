@@ -12,16 +12,16 @@ const Title = styled(Typography)<StyledComponentProps>`
   margin-top: 0;
 `;
 
-export const Heading = ({ text, indentBottom = '0px' }: Props) => {
+export const Heading = ({ children, indentBottom = '0px' }: Props) => {
   return (
     <Title variant="h2" indentBottom={indentBottom}>
-      {text}
+      {children}
     </Title>
   );
 };
 
 type Props = {
-  text: string;
+  children: string;
   indentBottom?: string;
 };
 
