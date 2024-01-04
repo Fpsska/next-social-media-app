@@ -1,8 +1,10 @@
+import { Typography } from '@mui/material';
+
 import styled from '@emotion/styled';
 
 // /. IMPORTS
 
-const Title = styled.h2<StyledComponentProps>`
+const Title = styled(Typography)<StyledComponentProps>`
   font-size: 16px;
   font-weight: 500;
   color: #fbfbfb;
@@ -11,7 +13,11 @@ const Title = styled.h2<StyledComponentProps>`
 `;
 
 export const Heading = ({ text, indentBottom = '0px' }: Props) => {
-  return <Title indentBottom={indentBottom}>{text}</Title>;
+  return (
+    <Title variant="h2" indentBottom={indentBottom}>
+      {text}
+    </Title>
+  );
 };
 
 type Props = {
