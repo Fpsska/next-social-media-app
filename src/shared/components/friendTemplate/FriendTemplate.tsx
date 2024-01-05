@@ -2,7 +2,7 @@ import Image, { StaticImageData } from 'next/image';
 
 import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
 import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
-import { Button, IconButton, Stack, Tooltip, Typography } from '@mui/material';
+import { Button, IconButton, Stack, Tooltip } from '@mui/material';
 
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';

@@ -8,7 +8,7 @@ import MoveToInboxOutlinedIcon from '@mui/icons-material/MoveToInboxOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import List from '@mui/material/List';
 
-import { NavigationTemplate } from '.';
+import { NavigationTemplate } from './NavigationTemplate';
 
 // /. IMPORTS
 

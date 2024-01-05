@@ -10,7 +10,6 @@ const Wrapper = styled(Paper)<any>`
   display: flex;
   align-items: center;
   background-color: #34303e;
-  margin: 50px 0;
 `;
 
 const Input = styled(InputBase)`

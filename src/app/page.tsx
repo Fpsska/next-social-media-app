@@ -3,7 +3,7 @@
 import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { Navigation, SearchBar } from '@/components';
+import { Navigation, Profile, SearchBar, Tags } from '@/components';
 import {
   ActionLink,
   Divider,
@@ -27,8 +27,10 @@ const Home = () => {
     <Main>
       <Global styles={GlobalStyles} />
 
-      <Heading indentBottom="20px">Contacts</Heading>
+      <Heading>Contacts</Heading>
       <ActionLink>Watch All</ActionLink>
+
+      <Divider />
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <FriendTemplate name="thomas lean" city="New York, United states" />
@@ -46,7 +48,7 @@ const Home = () => {
         />
       </div>
 
-      <Heading indentBottom="20px">Stories</Heading>
+      <Divider />
 
       <div style={{ display: 'flex' }}>
         <StoryTemplate name="Elena" action="adding" />
@@ -57,6 +59,16 @@ const Home = () => {
       <Divider />
 
       <SearchBar />
+
+      <Divider />
+
+      <Tags />
+
+      <Divider />
+
+      <Profile status="online" />
+
+      <Divider />
 
       <Navigation />
     </Main>
