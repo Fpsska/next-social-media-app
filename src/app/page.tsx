@@ -3,7 +3,7 @@
 import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { Navigation, Profile, SearchBar, Tags } from '@/components';
+import { Followers, Navigation, Profile, SearchBar, Tags } from '@/components';
 import {
   ActionLink,
   Divider,
@@ -33,7 +33,11 @@ const Home = () => {
       <Divider />
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <FriendTemplate name="thomas lean" city="New York, United states" />
+        <FriendTemplate
+          avatar="https://images.unsplash.com/photo-1616277239237-1c50214ffa78?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          name="thomas lean"
+          city="New York, United states"
+        />
 
         <FriendTemplate
           name="thomas lean"
@@ -52,7 +56,10 @@ const Home = () => {
 
       <div style={{ display: 'flex' }}>
         <StoryTemplate name="Elena" action="adding" />
-        <StoryTemplate name="Neil" />
+        <StoryTemplate
+          name="Neil"
+          avatar="https://images.unsplash.com/photo-1616277239237-1c50214ffa78?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
         <StoryTemplate name="Keran" />
       </div>
 
@@ -66,7 +73,14 @@ const Home = () => {
 
       <Divider />
 
-      <Profile status="online" />
+      <Profile
+        avatar="https://images.unsplash.com/photo-1616277239237-1c50214ffa78?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        status="online"
+      />
+
+      <Divider />
+
+      <Followers />
 
       <Divider />
 

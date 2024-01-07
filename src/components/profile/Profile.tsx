@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 import Stack from '@mui/material/Stack';
 
@@ -67,11 +67,21 @@ const Counter = styled.span`
 
 const Label = styled.span``;
 
-export const Profile = ({ status = 'offline' }: Props) => {
+export const Profile = ({
+  avatar = placeholder,
+  status = 'offline'
+}: Props) => {
   return (
     <Wrapper>
       <ImageContainer>
-        <Image src={placeholder} style={imageStyles} alt="profile avatar" />
+        <Image
+          src={avatar}
+          style={imageStyles}
+          width={100}
+          height={100}
+          alt="profile avatar"
+          priority
+        />
         <Badge>
           <Status status={status} />
         </Badge>
@@ -97,7 +107,8 @@ export const Profile = ({ status = 'offline' }: Props) => {
 };
 
 type Props = {
-  status: StatusTypes;
+  avatar?: StaticImageData | string;
+  status?: StatusTypes;
 };
 
 type StatusTypes = 'online' | 'offline';

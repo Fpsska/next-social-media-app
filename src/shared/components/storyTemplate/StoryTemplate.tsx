@@ -76,8 +76,8 @@ const imageStyles = {
   maxWidth: '100%',
   display: 'inline-block',
   verticalAlign: 'middle',
-  width: '96%',
-  height: '96%'
+  width: '67px',
+  height: '67px'
 };
 
 export const StoryTemplate = ({
@@ -94,7 +94,13 @@ export const StoryTemplate = ({
               <AddIcon style={{ color: '#fbfbfb' }} />
             </Button>
           ) : (
-            <Image src={avatar} style={imageStyles} alt="user avatar" />
+            <Image
+              src={avatar}
+              width={70}
+              height={70}
+              style={imageStyles}
+              alt="user avatar"
+            />
           )}
         </>
       </ImageContainer>
@@ -105,7 +111,7 @@ export const StoryTemplate = ({
 
 type Props = {
   action?: 'adding' | 'viewing';
-  avatar?: StaticImageData;
+  avatar?: StaticImageData | string;
   name: string;
 };
 

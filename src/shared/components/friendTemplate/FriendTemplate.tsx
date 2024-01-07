@@ -82,7 +82,13 @@ export const FriendTemplate = ({
   return (
     <Template action={action}>
       <Wrapper action={action}>
-        <Image src={avatar} style={imageStyles} alt="user avatar" />
+        <Image
+          src={avatar}
+          style={imageStyles}
+          width={70}
+          height={70}
+          alt="user avatar"
+        />
         <InfoContainer>
           <Name>{name}</Name>
           <City>{city}</City>
@@ -126,7 +132,7 @@ export const FriendTemplate = ({
 type Props = {
   name: string;
   city: string;
-  avatar?: StaticImageData;
+  avatar?: StaticImageData | string;
   action?: ActionTypes;
 };
 
