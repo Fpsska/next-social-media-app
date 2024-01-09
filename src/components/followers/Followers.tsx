@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   border-radius: 6px;
 `;
 
-const ImageGroup = styled.div`
+const ImageGroup = styled.ul`
   display: flex;
 `;
 
@@ -22,10 +22,11 @@ const imageStyles = {
   borderRadius: '50%',
   maxWidth: '100%',
   display: 'inline-block',
-  verticalAlign: 'middle'
+  verticalAlign: 'middle',
+  objectFit: 'cover'
 };
 
-const ImageContainer = styled.div<StyledComponentProps>`
+const ImageContainer = styled.li<StyledComponentProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,8 +37,8 @@ const ImageContainer = styled.div<StyledComponentProps>`
   overflow: hidden;
   background-color: ${({ type }) => type === 'empty' && '#171525'};
   font-size: 20px;
-
   margin-left: -10px;
+
   :first-child {
     margin-left: 0;
   }
@@ -61,7 +62,7 @@ export const Followers = () => {
       <ImageGroup>
         <ImageContainer>
           <Image
-            src="https://images.unsplash.com/photo-1616277239237-1c50214ffa78?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1569516449771-41c89ee14ca3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             width={55}
             height={55}
             style={imageStyles}

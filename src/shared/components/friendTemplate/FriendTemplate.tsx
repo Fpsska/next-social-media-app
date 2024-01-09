@@ -11,7 +11,7 @@ import placeholder from '../../../../public/assets/images/user-placeholder-avata
 
 // /. IMPORTS
 
-const Template = styled.div<StyledComponentProps>`
+const Template = styled.li<StyledComponentProps>`
   display: ${({ action }) => action !== 'requesting' && 'flex'};
   align-items: center;
   justify-content: space-between;
@@ -70,7 +70,8 @@ const imageStyles = {
   maxWidth: '100%',
   marginRight: '10px',
   display: 'inline-block',
-  verticalAlign: 'middle'
+  verticalAlign: 'middle',
+  objectFit: 'cover'
 };
 
 export const FriendTemplate = ({

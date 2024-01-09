@@ -8,7 +8,7 @@ import placeholder from '../../../../public/assets/images/user-placeholder-avata
 
 // /. IMPORTS
 
-const Template = styled.div`
+const Template = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,12 +72,13 @@ const ImageContainer = styled.div<StyledComponentProps>`
 `;
 
 const imageStyles = {
+  width: '67px',
+  height: '67px',
   borderRadius: '50%',
   maxWidth: '100%',
   display: 'inline-block',
   verticalAlign: 'middle',
-  width: '67px',
-  height: '67px'
+  objectFit: 'cover'
 };
 
 export const StoryTemplate = ({

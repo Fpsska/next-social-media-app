@@ -10,14 +10,15 @@ const StyledLink = styled(Link)`
   color: #4e7bff;
 `;
 
-export const ActionLink = ({ children }: Props) => {
+export const ActionLink = ({ className, children }: Props) => {
   return (
-    <StyledLink href="#" underline="none">
+    <StyledLink className={className} href="#" underline="none">
       {children}
     </StyledLink>
   );
 };
 
 type Props = {
+  className?: string;
   children: string;
 };

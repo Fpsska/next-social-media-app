@@ -25,7 +25,8 @@ const imageStyles = {
   borderRadius: '50%',
   maxWidth: '100%',
   display: 'inline-block',
-  verticalAlign: 'middle'
+  verticalAlign: 'middle',
+  objectFit: 'cover'
 };
 
 const Badge = styled.div`
@@ -86,7 +87,7 @@ export const Profile = ({
           <Status status={status} />
         </Badge>
       </ImageContainer>
-      <Name>Tim Cahjll</Name>
+      <Name>Fpsska</Name>
       <City>Terrance .CA United states</City>
       <Stack direction="row" spacing={4}>
         <Stack direction="column" spacing={1} textAlign="center">
