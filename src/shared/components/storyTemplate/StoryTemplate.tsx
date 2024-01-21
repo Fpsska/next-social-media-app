@@ -1,10 +1,12 @@
-import Image, { StaticImageData } from 'next/image';
+'use client';
+
+import React from 'react';
 
 import AddIcon from '@mui/icons-material/Add';
 
 import styled from '@emotion/styled';
 
-import placeholder from '../../../../public/assets/images/user-placeholder-avatar.png';
+import { CustomImage, StrictUnion } from '@/shared';
 
 // /. IMPORTS
 
@@ -71,21 +73,11 @@ const ImageContainer = styled.div<StyledComponentProps>`
   }`}
 `;
 
-const imageStyles = {
-  width: '67px',
-  height: '67px',
-  borderRadius: '50%',
-  maxWidth: '100%',
-  display: 'inline-block',
-  verticalAlign: 'middle',
-  objectFit: 'cover'
-};
+export const StoryTemplate: React.FC<
+  StrictUnion<AddingTemplate | ViewingTemplate>
+> = (props) => {
+  const { action = 'viewing', avatar, name = 'user' } = props;
 
-export const StoryTemplate = ({
-  action = 'viewing',
-  avatar = placeholder,
-  name = 'user'
-}: Props) => {
   return (
     <Template>
       <ImageContainer action={action}>
@@ -95,11 +87,10 @@ export const StoryTemplate = ({
               <AddIcon style={{ color: '#fbfbfb' }} />
             </Button>
           ) : (
-            <Image
-              src={avatar}
+            <CustomImage
+              image={avatar as string}
               width={70}
               height={70}
-              style={imageStyles}
               alt="user avatar"
             />
           )}
@@ -110,9 +101,12 @@ export const StoryTemplate = ({
   );
 };
 
-type Props = {
-  action?: 'adding' | 'viewing';
-  avatar?: StaticImageData | string;
+type AddingTemplate = {
+  action: Extract<ActionTypes, 'adding'>;
+};
+
+type ViewingTemplate = {
+  avatar: string;
   name: string;
 };
 

@@ -1,3 +1,5 @@
+'use client';
+
 import Link from '@mui/material/Link';
 
 import styled from '@emotion/styled';

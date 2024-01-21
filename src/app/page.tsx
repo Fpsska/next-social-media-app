@@ -66,7 +66,7 @@ const Home = () => {
                 name="Jacob Hill"
                 city="New York, United states"
                 action="messaging"
-                avatar="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                avatar=""
               />
               <FriendTemplate
                 name="Thomas lean"
@@ -78,7 +78,7 @@ const Home = () => {
                 name="Rebort Walker"
                 city="New York, United states"
                 action="messaging"
-                avatar="https://images.unsplash.com/photo-1599566147214-ce487862ea4f?q=80&w=2147&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                avatar="https://images.unsplash.com/photo-1599566147-ce487862ea4f?q=80&w=2147&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               />
               <FriendTemplate
                 name="Helene Engels"
@@ -109,8 +109,7 @@ const Home = () => {
             <StyledActionLink>Watch All</StyledActionLink>
           </SectionTop>
           <StoriesList>
-            {/* REMOVE ABILITY TO USE NAME WITH ADDING ACTION */}
-            <StoryTemplate name="Elena" action="adding" />
+            <StoryTemplate action="adding" />
             <StoryTemplate
               name="Elena"
               avatar="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -172,25 +171,21 @@ const Home = () => {
               <FriendTemplate
                 name="Kristi Nillon"
                 city="New York, United states"
-                action="adding"
                 avatar="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               />
               <FriendTemplate
                 name="Andrey Brown"
                 city="New York, United states"
-                action="adding"
                 avatar="https://images.unsplash.com/photo-1641260774125-04d527b376a5?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               />
               <FriendTemplate
                 name="Elizabeth Wilson"
                 city="New York, United states"
-                action="adding"
                 avatar="https://images.unsplash.com/photo-1509868918748-a554ad25f858?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               />
               <FriendTemplate
                 name="Fiona Anderson"
                 city="New York, United states"
-                action="adding"
                 avatar="https://images.unsplash.com/photo-1488716820095-cbe80883c496?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               />
             </List>

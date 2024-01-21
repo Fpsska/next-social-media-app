@@ -1,4 +1,6 @@
-import Image, { StaticImageData } from 'next/image';
+'use client';
+
+import React from 'react';
 
 import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
 import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
@@ -7,7 +9,7 @@ import { Button, IconButton, Stack, Tooltip } from '@mui/material';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import placeholder from '../../../../public/assets/images/user-placeholder-avatar.png';
+import { CustomImage, StrictUnion } from '@/shared';
 
 // /. IMPORTS
 
@@ -26,6 +28,10 @@ const Wrapper = styled.div<StyledComponentProps>`
   align-items: ${({ action }) =>
     action === 'requesting' ? 'flex-start' : 'center'};
   margin-right: ${({ action }) => action !== 'requesting' && '40px;'};
+`;
+
+const ImageContainer = styled.div`
+  margin-right: 10px;
 `;
 
 const InfoContainer = styled.div`
@@ -63,33 +69,28 @@ const ButtonDecline = styled(Button)`
   ${baseButtonStyles}
 `;
 
-const imageStyles = {
-  width: '70px',
-  height: '70px',
-  borderRadius: '50%',
-  maxWidth: '100%',
-  marginRight: '10px',
-  display: 'inline-block',
-  verticalAlign: 'middle',
-  objectFit: 'cover'
-};
+export const FriendTemplate: React.FC<
+  StrictUnion<AddingTemplate | MessagingTemplate | RequestingTemplate>
+> = (props) => {
+  const {
+    name = 'user user',
+    city = 'city',
+    avatar,
+    action = 'adding'
+  } = props;
 
-export const FriendTemplate = ({
-  name,
-  city,
-  avatar = placeholder,
-  action = 'requesting'
-}: Props) => {
   return (
     <Template action={action}>
       <Wrapper action={action}>
-        <Image
-          src={avatar}
-          style={imageStyles}
-          width={70}
-          height={70}
-          alt="user avatar"
-        />
+        <ImageContainer>
+          <CustomImage
+            image={avatar}
+            alt="user avatar"
+            width={70}
+            height={70}
+          />
+        </ImageContainer>
+
         <InfoContainer>
           <Name>{name}</Name>
           <City>{city}</City>
@@ -133,8 +134,20 @@ export const FriendTemplate = ({
 type Props = {
   name: string;
   city: string;
-  avatar?: StaticImageData | string;
-  action?: ActionTypes;
+  avatar: string;
+  action: ActionTypes;
+};
+
+type RequestingTemplate = Props & {
+  onSendRequest?: () => void;
+};
+
+type MessagingTemplate = Props & {
+  onSendMessage?: () => void;
+};
+
+type AddingTemplate = Omit<Props, 'action'> & {
+  onAdd?: () => void;
 };
 
 type ActionTypes = 'requesting' | 'messaging' | 'adding';

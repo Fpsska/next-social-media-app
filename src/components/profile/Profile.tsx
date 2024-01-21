@@ -1,10 +1,8 @@
-import Image, { StaticImageData } from 'next/image';
-
 import Stack from '@mui/material/Stack';
 
 import styled from '@emotion/styled';
 
-import placeholder from '../../../public/assets/images/user-placeholder-avatar.png';
+import { CustomImage } from '@/shared';
 
 // /. IMPORTS
 
@@ -18,16 +16,6 @@ const ImageContainer = styled.div`
   position: relative;
   margin-bottom: 10px;
 `;
-
-const imageStyles = {
-  width: '100px',
-  height: '100px',
-  borderRadius: '50%',
-  maxWidth: '100%',
-  display: 'inline-block',
-  verticalAlign: 'middle',
-  objectFit: 'cover'
-};
 
 const Badge = styled.div`
   position: absolute;
@@ -68,16 +56,12 @@ const Counter = styled.span`
 
 const Label = styled.span``;
 
-export const Profile = ({
-  avatar = placeholder,
-  status = 'offline'
-}: Props) => {
+export const Profile = ({ avatar, status = 'offline' }: Props) => {
   return (
     <Wrapper>
       <ImageContainer>
-        <Image
-          src={avatar}
-          style={imageStyles}
+        <CustomImage
+          image={avatar}
           width={100}
           height={100}
           alt="profile avatar"
@@ -108,7 +92,7 @@ export const Profile = ({
 };
 
 type Props = {
-  avatar?: StaticImageData | string;
+  avatar: string;
   status?: StatusTypes;
 };
 
